@@ -12,34 +12,69 @@ export const Wrapper = styled.div`
     & .xAxis {
       display: none;
     }
+    & .mobile {
+      display: block !important;
+    }
+    & .mobileHeading {
+      display: block !important;
+    }
+  }
+  & .mobile {
+    display: none;
+    color: white;
+
+    background: rgba(0, 0, 0, 0.5);
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      text-align: center;
+      & ul {
+        list-style-type: none;
+      }
+    }
+  }
+  & .mobileHeading {
+    display: none;
   }
 `;
 
 export const OverViewWrapper = styled.div`
   height: 70vh;
   position: relative;
+  align-items: center;
+  display: flex;
+  @media (max-width: 768px) {
+    display: block;
+    height: auto;
+  }
   > :nth-child(1) {
-    position: absolute;
-    color: white;
-    width: 40vw;
-    font-size: 1.5em;
-    left: 2.25vw;
-    text-align: center;
+    display: grid;
+    width: 100%;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
     @media (max-width: 768px) {
-      position: static;
-      color: white;
-      font-size: 1.5em;
-      text-align: center;
-      width: 100%;
+      grid-template-columns: 1fr;
+    }
+    > div {
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
     }
   }
   @media (max-width: 768px) {
     margin-bottom: 12vh;
-    margin-top: 6vh;
+    margin-top: 12vh;
   }
 `;
 
 export const DetailsWrapper = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+
   display: grid;
   height: 70vh;
   grid-template-columns: 1fr;

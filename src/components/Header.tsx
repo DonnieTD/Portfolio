@@ -47,8 +47,8 @@ const Nav = styled.div`
       }
     }
     .navitemMobile {
-      height: 5.5vh;
-      margin-right: 2vw;
+      height: 7vh;
+      margin-right: 3.5vw;
     }
   }
 `;

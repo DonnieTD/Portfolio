@@ -31,6 +31,15 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    .successToast,
+    .errorToast {
+      width: 80vw;
+      top: 8px;
+      margin-bottom: 20px;
+    }
+  }
   & form {
     text-align: center;
     border: solid 3px white;

@@ -62,6 +62,9 @@ const MobileNavOverlay = styled.div`
       color: gold !important;
     }
   }
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
 
 function App() {
@@ -79,6 +82,7 @@ function App() {
               to="/"
               activeClassName="active"
               className="navitemd"
+              onClick={() => setShowMobileNav(false)}
             >
               <div>Home</div>
             </NavItemWrapper>
@@ -87,6 +91,7 @@ function App() {
               to="/skills"
               activeClassName="active"
               className="navitemd"
+              onClick={() => setShowMobileNav(false)}
             >
               <div>Skills</div>
             </NavItemWrapper>
@@ -95,6 +100,7 @@ function App() {
               to="/experience"
               activeClassName="active"
               className="navitemd"
+              onClick={() => setShowMobileNav(false)}
             >
               <div>Experience</div>
             </NavItemWrapper>
@@ -103,6 +109,7 @@ function App() {
               to="/contact"
               activeClassName="active"
               className="navitemd"
+              onClick={() => setShowMobileNav(false)}
             >
               <div>Contact</div>
             </NavItemWrapper>

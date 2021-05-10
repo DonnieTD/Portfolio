@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "react-tabs/style/react-tabs.css";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
+import { Line, Circle } from "rc-progress";
 import {
   BarChart,
   Bar,
@@ -10,6 +11,7 @@ import {
   ResponsiveContainer,
   Legend,
 } from "recharts";
+import { Config } from "./Config";
 import { DetailsWrapper, OverViewWrapper, Tab, Wrapper } from "./styles";
 
 const data = [
@@ -52,8 +54,84 @@ export const SkillsPage = () => {
   return (
     <Wrapper>
       <OverViewWrapper>
-        <div>Overview</div>
-        <ResponsiveContainer width="100%" height="100%">
+        <div>
+          <div>
+            <div style={{ color: "white", fontSize: "1.3em" }}>Front End</div>
+            <div>
+              <Circle
+                percent={100}
+                gapPosition="bottom"
+                strokeWidth={15}
+                trailWidth={6}
+                strokeLinecap="round"
+                strokeColor="gold"
+                style={{
+                  height: "24vh",
+                  marginTop: "2.5vh",
+                  marginBottom: "4vh",
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div style={{ color: "white", fontSize: "1.3em" }}>Back End</div>
+            <div>
+              <Circle
+                percent={75}
+                gapPosition="bottom"
+                strokeWidth={15}
+                trailWidth={6}
+                strokeLinecap="round"
+                strokeColor="gold"
+                style={{
+                  height: "24vh",
+                  marginTop: "2.5vh",
+                  marginBottom: "4vh",
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div style={{ color: "white", fontSize: "1.3em" }}>Dev Ops</div>
+            <div>
+              <Circle
+                percent={60}
+                gapPosition="bottom"
+                strokeWidth={15}
+                trailWidth={6}
+                strokeLinecap="round"
+                strokeColor="gold"
+                style={{
+                  height: "24vh",
+                  marginTop: "2.5vh",
+                  marginBottom: "4vh",
+                }}
+              />
+            </div>
+          </div>
+          <div>
+            <div style={{ color: "white", fontSize: "1.3em" }}>
+              Architecture
+            </div>
+            <div>
+              <Circle
+                percent={65}
+                gapPosition="bottom"
+                strokeWidth={15}
+                trailWidth={6}
+                strokeLinecap="round"
+                strokeColor="gold"
+                style={{
+                  height: "24vh",
+                  marginTop: "2.5vh",
+                  marginBottom: "4vh",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={500}
             height={300}
@@ -76,9 +154,10 @@ export const SkillsPage = () => {
             <Bar dataKey="uv" fill="gold" />
           </BarChart>
         </ResponsiveContainer>
+        */}
         {/* <div
           style={{
-            color: "white",
+            color: "white",fontSize:'1.3em',
             padding: "2vh 12vw",
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -113,335 +192,115 @@ export const SkillsPage = () => {
         <div>
           {tab === 0 && (
             <PerfectScrollbar className="scrollbarwrapper">
-              <div className="header">Foundations:</div>
               <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Html 5</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>CSS 3</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>JavaScript</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>TypeScript</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Sass</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Bootstrap</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Wordpress</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Axios / Fetch</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Jest</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Webpack</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Bootstrap</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>JQuery</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>AngularJs</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Cypress</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>AWS Amplify</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Jwt</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="header">React:</div>
-              <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Redux</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Redux Saga</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Zustand</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Valtio</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Jotai</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Styled-Components</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Emotion</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Material-UI</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>React-Query</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Testing Library</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>React Hook Form</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Framer Motion</li>
-                  </ul>
-                </div>
+                {Config.FE.map((x) => (
+                  <div>
+                    <ul className="itemUl">
+                      <li>{x}</li>
+                    </ul>
+                  </div>
+                ))}
               </div>
             </PerfectScrollbar>
           )}
           {tab === 1 && (
             <PerfectScrollbar className="scrollbarwrapper">
-              <div className="header">Foundations:</div>
               <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>SSL</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>MongoDB</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Postgres SQL</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Jwt</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Swagger</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>SQL</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="header">NodeJs:</div>
-              <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Express</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Prisma 2</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Mongoose</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Helmet</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Cors</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Winston</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Morgan</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="header">C#:</div>
-              <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Entity Framework</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>.Net</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Linq</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <ul className="itemUl">
-                    <li>Nunit</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Visual Studio</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="header">PHP:</div>
-              <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Laravel</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Doctrine</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Wordpress</li>
-                  </ul>
-                </div>
+                {Config.BE.map((x) => (
+                  <div>
+                    <ul className="itemUl">
+                      <li>{x}</li>
+                    </ul>
+                  </div>
+                ))}
               </div>
             </PerfectScrollbar>
           )}
           {tab === 2 && (
             <PerfectScrollbar className="scrollbarwrapper">
-              <div className="header">Tools:</div>
               <div className="itemWrapper">
-                <div>
-                  <ul className="itemUl">
-                    <li>Nginx</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Pm2</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>SSH</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Bash</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Ubuntu Server</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Docker</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Bitbucket Pipelines</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>AWS S3</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Aws Cognito</li>
-                  </ul>
-                </div>
-                <div>
-                  <ul className="itemUl">
-                    <li>Digital Ocean</li>
-                  </ul>
-                </div>
+                {Config.DO.map((x) => (
+                  <div>
+                    <ul className="itemUl">
+                      <li>{x}</li>
+                    </ul>
+                  </div>
+                ))}
               </div>
             </PerfectScrollbar>
           )}
         </div>
       </DetailsWrapper>
+      <h3
+        style={{
+          color: "black",
+          textAlign: "center",
+          background: "white",
+          padding: "2.5vh 0",
+          margin: "0px",
+        }}
+        className="mobileHeading"
+      >
+        Front End:
+      </h3>
+      <div className="mobile">
+        <div>
+          {Config.FE.map((x) => (
+            <div>
+              <ul>
+                <li>{x}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <h3
+        style={{
+          color: "black",
+          textAlign: "center",
+          background: "white",
+          padding: "2.5vh 0",
+          margin: "0px",
+        }}
+        className="mobileHeading"
+      >
+        {" "}
+        Back End:
+      </h3>
+      <div className="mobile">
+        <div>
+          {Config.BE.map((x) => (
+            <div>
+              <ul>
+                <li>{x}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <h3
+        style={{
+          color: "black",
+          textAlign: "center",
+          background: "white",
+          padding: "2.5vh 0",
+          margin: "0px",
+        }}
+        className="mobileHeading"
+      >
+        Dev Ops:
+      </h3>
+      <div className="mobile">
+        <div>
+          {Config.DO.map((x) => (
+            <div>
+              <ul>
+                <li>{x}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
     </Wrapper>
   );
 };

@@ -14,6 +14,7 @@ export const ContactPage = () => {
     setEmail("");
     setSubject("");
     setMessage("");
+    setError("");
     setSuccess("Success! Will get to you shortly!");
   };
   return (
@@ -58,7 +59,7 @@ export const ContactPage = () => {
       )}
       {success && success !== "" && (
         <div className="successToast">
-          <strong>{error}</strong>
+          <strong>{success}</strong>
         </div>
       )}
 
