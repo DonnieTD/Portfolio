@@ -1,25 +1,132 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled from "styled-components";
+import src from "./assets/background.jpg";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import { Header } from "./components/Header";
+
+import PerfectScrollbar from "react-perfect-scrollbar";
+import "react-perfect-scrollbar/dist/css/styles.css";
+import { ContactPage, ExperiencePage, HomePage, SkillsPage } from "./pages";
+
+const Wrapper = styled.div`
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  background-image: url(${src});
+  background-size: cover;
+  position: relative;
+  margin: 0;
+  * {
+    :focus {
+      outline: none;
+    }
+  }
+`;
+
+const NavItemWrapper = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  > div {
+    color: white;
+    font-size: 1.75em;
+    padding: 4vh 0;
+    text-decoration: none;
+  }
+`;
+
+const MobileNavOverlay = styled.div`
+  position: absolute;
+  top: 12vh;
+  background: rgba(0, 0, 0, 0.75);
+  height: 88vh;
+  width: 100%;
+  z-index: 100;
+  > ul {
+    padding: 0px;
+    list-style-type: none;
+    > li {
+      padding: 1.5vh;
+      color: white;
+      text-align: center;
+    }
+  }
+  & .active {
+    > div {
+      color: gold !important;
+    }
+  }
+`;
 
 function App() {
+  const [showMobileNav, setShowMobileNav] = useState(false);
+
+  const toggleNav = () => setShowMobileNav(!showMobileNav);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Router>
+        <Header setShowMobileNav={toggleNav} />
+        {showMobileNav && (
+          <MobileNavOverlay>
+            <NavItemWrapper
+              exact
+              to="/"
+              activeClassName="active"
+              className="navitemd"
+            >
+              <div>Home</div>
+            </NavItemWrapper>
+            <NavItemWrapper
+              exact
+              to="/skills"
+              activeClassName="active"
+              className="navitemd"
+            >
+              <div>Skills</div>
+            </NavItemWrapper>
+            <NavItemWrapper
+              exact
+              to="/experience"
+              activeClassName="active"
+              className="navitemd"
+            >
+              <div>Experience</div>
+            </NavItemWrapper>
+            <NavItemWrapper
+              exact
+              to="/contact"
+              activeClassName="active"
+              className="navitemd"
+            >
+              <div>Contact</div>
+            </NavItemWrapper>
+          </MobileNavOverlay>
+        )}
+
+        <PerfectScrollbar style={{ height: "88vh" }}>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route exact path="/skills">
+              <SkillsPage />
+            </Route>
+            <Route exact path="/experience">
+              <ExperiencePage />
+            </Route>
+            <Route exact path="/contact">
+              <ContactPage />
+            </Route>
+          </Switch>
+        </PerfectScrollbar>
+      </Router>
+    </Wrapper>
   );
 }
 
