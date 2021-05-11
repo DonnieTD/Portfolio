@@ -64,7 +64,7 @@ export const ContactPage = () => {
       )}
 
       <form>
-        <h1>Contace Me</h1>
+        <h1>Contact Me</h1>
         <input
           type="text"
           value={email}
