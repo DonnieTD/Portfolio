@@ -7,12 +7,14 @@ import { Menu } from "@styled-icons/boxicons-regular/Menu";
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 2fr;
-  height: 12vh;
-  background: white;
+  height: 10vh;
+  background: transparent;
+  border-bottom: solid 3px white;
+  box-sizing: border-box;
 `;
 
 const Logo = styled.img`
-  height: 7vh;
+  height: 5vh;
   margin-left: 0.5vw;
   @media (max-width: 768px) {
     height: 6vh;
@@ -48,6 +50,7 @@ const Nav = styled.div`
     }
     .navitemMobile {
       height: 7vh;
+      color:white;
       margin-right: 3.5vw;
     }
   }
@@ -59,16 +62,46 @@ const NavItemWrapper = styled(NavLink)`
   text-decoration: none;
   justify-content: center;
   > div {
-    color: black;
-    font-size: 1.25vw;
+    color: white;
+    font-size: 1vw;
     text-decoration: none;
   }
 `;
 
 const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
+ 
+  margin:0px;
+  padding: 0px;
   margin-left: 1.5vw;
+
+  > span{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-size: 2.5vw;
+    position:relative;
+    top:2px;
+    color:white;
+    font-family: festive!important;
+  }
+  @media (max-width: 768px) {
+    width: 40vw;
+    > span{      
+      font-size: 5vw;      
+    }
+  }
+  @media (max-width: 425px) {
+    width: 40vw;
+    > span{      
+      font-size: 11vw;      
+    }
+  }
+  @media (max-width: 375px) {
+    width: 40vw;
+    > span{      
+      font-size: 11vw;      
+    }
+  }
 `;
 
 export const Header: React.FC<{ setShowMobileNav: any }> = ({
@@ -77,7 +110,7 @@ export const Header: React.FC<{ setShowMobileNav: any }> = ({
   return (
     <Wrapper>
       <LogoWrapper>
-        <Logo src={src} />
+        <span>Donnie TD</span>
       </LogoWrapper>
       <div></div>
       <Nav>

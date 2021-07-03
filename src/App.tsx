@@ -17,8 +17,9 @@ const Wrapper = styled.div`
   min-height: 100%;
   height: 100%;
   width: 100%;
-  background-image: url(${src});
+  background-image: url(https://images.unsplash.com/photo-1472120435266-53107fd0c44a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
   background-size: cover;
+  background-position: 100% 60%;
   position: relative;
   margin: 0;
   * {
@@ -116,7 +117,7 @@ function App() {
           </MobileNavOverlay>
         )}
 
-        <PerfectScrollbar style={{ height: "88vh" }}>
+        <PerfectScrollbar style={{ height: "90vh" }}>
           <Switch>
             <Route exact path="/">
               <HomePage />

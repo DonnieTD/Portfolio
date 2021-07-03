@@ -35,7 +35,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "deploy-production": "react-scripts build && scp -r ./build/* donnie@165.22.82.6:/var/www/donniethedev.co.za/html",
+    "deploy": "react-scripts build && cp -a ./build/. /var/www/donniethedev.co.za",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
