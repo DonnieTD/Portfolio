@@ -9,7 +9,6 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 1fr 2fr;
   height: 10vh;
   background: transparent;
-  border-bottom: solid 3px white;
   box-sizing: border-box;
 `;
 
@@ -93,13 +92,13 @@ const LogoWrapper = styled.div`
   @media (max-width: 425px) {
     width: 40vw;
     > span{      
-      font-size: 11vw;      
+      font-size: 10vw;      
     }
   }
   @media (max-width: 375px) {
     width: 40vw;
     > span{      
-      font-size: 11vw;      
+      font-size: 10vw;      
     }
   }
 `;
